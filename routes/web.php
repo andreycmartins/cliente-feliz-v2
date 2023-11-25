@@ -20,4 +20,4 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
-Route::get('clientes/create', 'ClienteController@create')->name('clientes.create');
+Route::post('/users', 'UserController@store')->name('users.store');

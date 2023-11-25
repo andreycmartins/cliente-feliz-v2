@@ -15,19 +15,19 @@
                     </div>
                     @endif
 
-                    <button id="create-client-btn" class="btn btn-primary">Criar Cliente</button><br><br>
+                    <button id="create-user-btn" class="btn btn-primary">Criar Usuário</button><br><br>
 
-                    <div id="create-client-modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Criar Cliente</h5>
+                                    <h5 class="modal-title">Criar Usuário</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
-                                    <form id="create-client-form" method="POST" >
+                                <form id="create-user-form" method="POST" action="{{ route('users.store') }}">
+                                    <div class="modal-body">
                                         @csrf
                                         <div class="form-group">
                                             <label for="name">Nome:</label>
@@ -41,13 +41,12 @@
                                             <label for="password">Senha:</label>
                                             <input type="password" class="form-control" id="password" name="password" required>
                                         </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                         <button type="submit" class="btn btn-primary">Salvar</button>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-primary">Salvar</button>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -84,9 +83,9 @@
     let table = new DataTable('#list-users');
 
     $(document).ready(function() {
-        $('#create-client-btn').click(function() {
+        $('#create-user-btn').click(function() {
             // Exibir o modal
-            $('#create-client-modal').modal('show');
+            $('#create-user-modal').modal('show');
         });
     });
 </script>
