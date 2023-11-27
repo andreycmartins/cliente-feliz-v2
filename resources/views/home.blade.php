@@ -57,6 +57,7 @@
                                 <th>ID</th>
                                 <th>Nome</th>
                                 <th>E-mail</th>
+                                <th>Funções</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -65,6 +66,9 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
+                                <td>
+                                    <button class="btn btn-danger delete-btn" data-user-id="{{ $user->id }}">Excluir</button>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -84,9 +88,29 @@
 
     $(document).ready(function() {
         $('#create-user-btn').click(function() {
-            // Exibir o modal
             $('#create-user-modal').modal('show');
         });
+
+        $('.delete-btn').click(function() {
+            var userId = $(this).data('user-id');
+            deleteUser(userId);
+        });
+
+        function deleteUser(userId) {
+            $.ajax({
+                url: '/users/' + userId,
+                type: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    console.log(response.message);
+                },
+                error: function(xhr, status, error) {
+                    console.log('Erro ao excluir o usuário:', error);
+                }
+            });
+        }
     });
 </script>
 @endsection

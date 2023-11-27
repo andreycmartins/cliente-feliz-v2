@@ -21,3 +21,5 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 Route::post('/users', 'UserController@store')->name('users.store');
+
+Route::delete('/users/{id}', 'UserController@destroy')->name('users.destroy');
