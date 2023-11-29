@@ -82,40 +82,4 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-<script>
-    $(document).ready(function() {
-
-        let table = new DataTable('#list-users', {
-            // "search": {
-            //     "search": "Andrey"
-            // }
-        });
-        
-        $('#create-user-btn').click(function() {
-            $('#create-user-modal').modal('show');
-        });
-
-        $('.delete-btn').click(function() {
-            var userId = $(this).data('user-id');
-            deleteUser(userId);
-        });
-
-        function deleteUser(userId) {
-            $.ajax({
-                url: '/users/' + userId,
-                type: 'DELETE',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function(response) {
-                    console.log(response.message);
-                    table.ajax.reload()
-                },
-                error: function(xhr, status, error) {
-                    console.log('Erro ao excluir o usuário:', error);
-                }
-            });
-        }
-    });
-</script>
 @endsection
