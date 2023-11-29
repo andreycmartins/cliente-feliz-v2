@@ -84,8 +84,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 <script>
-    let table = new DataTable('#list-users');
-
+    let table = new DataTable('#list-users', {
+        paging: true,
+        pageLength: 10
+    });
     $(document).ready(function() {
         $('#create-user-btn').click(function() {
             $('#create-user-modal').modal('show');
@@ -105,6 +107,7 @@
                 },
                 success: function(response) {
                     console.log(response.message);
+                    table.ajax.reload()
                 },
                 error: function(xhr, status, error) {
                     console.log('Erro ao excluir o usuário:', error);
