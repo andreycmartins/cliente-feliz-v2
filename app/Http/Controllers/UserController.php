@@ -10,7 +10,11 @@ class UserController extends Controller
 {
     public function index()
     {
-        // Lógica para exibir a lista de usuários
+        $user = User::all();
+
+        return response()->json([
+            'data' => $user
+        ]);
     }
 
     public function create()
@@ -28,7 +32,7 @@ class UserController extends Controller
         ]);
 
         // Criar um novo usuário com os dados validados
-        $user = User::create([
+        User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
@@ -61,7 +65,7 @@ class UserController extends Controller
 
             return response()->json(['message' => 'Usuário excluído com sucesso']);
         } catch (\Exception $e) {
-            return response()->json(['error' => 'Erro ao excluir o usuário'], 500);
+            return response()->json(['error' => 'Erro ao excluir o usuário'], 500 + $e);
         }
     }
 }

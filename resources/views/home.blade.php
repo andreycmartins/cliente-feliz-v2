@@ -60,18 +60,6 @@
                                 <th>Funções</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach ($users as $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>
-                                    <button class="btn btn-danger delete-btn" data-user-id="{{ $user->id }}">Excluir</button>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
                     </table>
 
                 </div>
