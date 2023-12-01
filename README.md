@@ -68,4 +68,4 @@ Adicione uma linha no final do arquivo com o seguinte formato:
 Salve o arquivo<br>
 Pressione Ctrl + X para sair do editor nano<br>
 
-Desta forma, o projeto estará pronto para ser iniciado com o ```php artisan serve``` e ser acessado pelo ```cliente-sonavoip.local```
+Desta forma, o projeto estará pronto para ser iniciado com o ```php artisan serve``` e ser acessado pela rota ```cliente-sonavoip.local```
