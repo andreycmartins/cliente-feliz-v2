@@ -23,7 +23,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title">Criar Usuário</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                        <span aria-hidden="true">&times;</span><span aria-hidden="true">×</span>
+                                        <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <form id="create-user-form" method="POST" action="{{ route('users.store') }}">
