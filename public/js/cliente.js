@@ -22,8 +22,8 @@ $(function () {
             {
                 data: null, render: function (data, type, row) {
                     return `
-                    <button class="btn btn-primary edit-btn" data-user-id="${data.id}" value="${data.id}" data-bs-toggle="modal" id="edit-btn" data-bs-target="#editarUsuarioModal">Editar</button>
-                    <button class="btn btn-danger delete-btn" data-user-id="${data.id}" value="${data.id}">Excluir</button>    
+                    <button class="btn btn-info edit-btn" data-user-id="${data.id}" value="${data.id}" data-bs-toggle="modal" id="edit-btn" data-bs-target="#editarUsuarioModal"><i class="far fa-edit"></i></button>
+                    <button class="btn btn-danger delete-btn" data-user-id="${data.id}" value="${data.id}"><i class="fas fa-trash"></i></button>    
                 `
                 }
             },

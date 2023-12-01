@@ -16,8 +16,7 @@
                     </div>
                     @endif
 
-                    <button id="create-user-btn" class="btn btn-success">Criar Usuário</button><br><br>
-
+                    <button id="create-user-btn" class="btn btn-primary">Criar Usuário</button><br><br>
                     <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
