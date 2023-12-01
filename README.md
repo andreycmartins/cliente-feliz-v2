@@ -44,15 +44,27 @@ Desta forma, o projeto estará rodando no host padrão, que é 127.0.0.1 e a por
 <h3>Windows:</h3>
 
 Abra o bloco de notas ou qualquer editor de texto como administrador<br>
-No editor de texto, abra o arquivo de hosts localizado em ```C:\Windows\System32\drivers\etc\hosts```
-Adicione uma linha no final do arquivo com o seguinte formato: 127.0.0.1  cliente-sonavoip.local<br>
+No editor de texto, abra o arquivo de hosts localizado em
+```
+C:\Windows\System32\drivers\etc\hosts
+```
+Adicione uma linha no final do arquivo com o seguinte formato: 
+```
+127.0.0.1  cliente-sonavoip.local
+```
 Salve o arquivo<br>
 ---
 <h3>MacOS e Linux:</h3>
 
 Abra o Terminal<br>
-Execute o seguinte comando para abrir o arquivo de hosts: sudo nano /etc/hosts<br>
+Execute o seguinte comando para abrir o arquivo de hosts: 
+```
+sudo nano /etc/hosts
+```
 Insira a senha de administrador quando solicitado<br>
-Adicione uma linha no final do arquivo com o seguinte formato: 127.0.0.1  cliente-sonavoip.local<br>
-Pressione Ctrl + O para salvar o arquivo e, em seguida, pressione Enter<br>
+Adicione uma linha no final do arquivo com o seguinte formato: 
+```
+127.0.0.1  cliente-sonavoip.local
+```
+Salve o arquivo<br>
 Pressione Ctrl + X para sair do editor nano<br>
