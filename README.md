@@ -37,7 +37,7 @@ php artisan serve
 ```
 Desta forma, o projeto estará rodando no host padrão, que é 127.0.0.1 e a porta 8000
 
-
+---
 
 ### Configurando o domnínio cliente-sonavoip.local
 
@@ -53,7 +53,6 @@ Adicione uma linha no final do arquivo com o seguinte formato:
 127.0.0.1  cliente-sonavoip.local
 ```
 Salve o arquivo<br>
----
 <h3>MacOS e Linux:</h3>
 
 Abra o Terminal<br>
