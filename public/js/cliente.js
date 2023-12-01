@@ -20,7 +20,7 @@ $(function () {
             { data: 'name' },
             { data: 'email' },
             {
-                data: null, render: function (data, type, row) {
+                data: null, render: function (data) {
                     return `
                     <button class="btn btn-info edit-btn" data-user-id="${data.id}" value="${data.id}" data-bs-toggle="modal" id="edit-btn" data-bs-target="#editarUsuarioModal"><i class="far fa-edit"></i></button>
                     <button class="btn btn-danger delete-btn" data-user-id="${data.id}" value="${data.id}"><i class="fas fa-trash"></i></button>    
@@ -75,7 +75,7 @@ $(function () {
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function (response) {
+                success: function () {
                     table.ajax.reload()
                 },
                 error: function (error) {
@@ -127,8 +127,7 @@ $(function () {
             },
             error: error => {
 
-                const primeiraChave = Object.keys(error.responseJSON.errors)[0];
-                const mensagem = error.responseJSON.errors[primeiraChave];
+                console.log('erro: ' + error)
 
             }
 
