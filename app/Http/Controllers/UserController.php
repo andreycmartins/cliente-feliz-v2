@@ -18,21 +18,14 @@ class UserController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        // Lógica para exibir o formulário de criação de usuários
-    }
-
     public function store(Request $request)
     {
-        // Validar os dados enviados pelo formulário
         $validatedData = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
 
-        // Criar um novo usuário com os dados validados
         User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
@@ -41,11 +34,6 @@ class UserController extends Controller
 
         // Redirecionar para uma página com uma mensagem de sucesso
         return redirect()->route('home')->with('success', 'Usuário criado com sucesso!');
-    }
-
-    public function show($id)
-    {
-        // Lógica para exibir um usuário específico
     }
 
     public function edit($id)
