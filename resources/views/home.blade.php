@@ -23,7 +23,7 @@
                                 <div class="modal-header">
                                     <h5 class="modal-title">Criar Usuário</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                        <span aria-hidden="true">&times;</span>
+                                        <span aria-hidden="true">&times;</span><span aria-hidden="true">×</span>
                                     </button>
                                 </div>
                                 <form id="create-user-form" method="POST" action="{{ route('users.store') }}">
@@ -56,7 +56,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="ModalLabel">Editar Usuário</h1>
-                                    <button type="" id="fecharIconeEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">X</button>
+                                    <button type="button" class="close" id="fecharIconeEditar" class="btn-close" data-bs-dismiss="modal" data-dismiss="modal" aria-label="Fechar">×</button>
                                 </div>
                                 <form id="formEdit">
                                     @csrf
@@ -105,4 +105,6 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
 @endsection

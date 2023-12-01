@@ -1,5 +1,9 @@
 $(function () {
     let table = new DataTable('#list-users', {
+        dom: 'Bfrtip',
+        buttons: [
+            'pdf',
+        ],
         ajax: {
             url: '/users',
             type: 'GET',
