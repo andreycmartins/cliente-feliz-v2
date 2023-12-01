@@ -29,7 +29,25 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        .buttons-pdf {
+            border-radius: 5px;
+            background-color: #f0ad4e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+
 </head>
+
+
+
 
 <body>
     <div id="app">

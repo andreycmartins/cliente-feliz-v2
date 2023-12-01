@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -15,7 +16,7 @@
                     </div>
                     @endif
 
-                    <button id="create-user-btn" class="btn btn-primary">Criar Usuário</button><br><br>
+                    <button id="create-user-btn" class="btn btn-success">Criar Usuário</button><br><br>
 
                     <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
@@ -107,4 +108,8 @@
 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css"></script>
+
+
 @endsection
