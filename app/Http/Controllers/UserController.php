@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Exception;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -49,12 +50,51 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        // Lógica para exibir o formulário de edição de um usuário
+        try{
+
+            if (!$id) {
+                return ['error' => true, 'message' => "ID do usuário não informado"];
+            }
+
+            $user = User::FindOrFail($id);
+
+            return response()->json([
+                'error' => false,
+                'dados' => $user
+            ]);
+
+        } catch(Exception $e) {
+
+            return response()->json([
+                'error' => false,
+                'message' => $e->getMessage(),
+            ]);
+        }
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        // Lógica para processar o formulário de edição de um usuário
+        try{
+            
+            if (!$request->id) {
+                return ['error' => true, 'message' => "ID do cliente não informado!"];
+            }
+
+            User::FindOrFail($request->id)->update($request->all());
+
+            return response()->json([
+                'error' => false,
+                'dados' => 'Usuario editado com sucesso',
+            ]);
+
+        } catch(Exception $e) {
+
+            return response()->json([
+                'error' => true,
+                'message' => $e->getMessage(),
+            ]);
+
+        }
     }
 
     public function destroy($id)

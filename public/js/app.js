@@ -4029,7 +4029,7 @@ render._withStripped = true;
       this._backdrop = null;
       this._isShown = false;
       this._isBodyOverflowing = false;
-      this._ignoreBackdropClick = false;
+      this._ignoreBackdropClick = true;
       this._isTransitioning = false;
       this._scrollbarWidth = 0;
     } // Getters
@@ -4080,7 +4080,7 @@ render._withStripped = true;
       $__default["default"](this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
         $__default["default"](_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
           if ($__default["default"](event.target).is(_this._element)) {
-            _this._ignoreBackdropClick = true;
+            _this._ignoreBackdropClick = false;
           }
         });
       });
@@ -4345,7 +4345,7 @@ render._withStripped = true;
         $__default["default"](this._backdrop).appendTo(document.body);
         $__default["default"](this._element).on(EVENT_CLICK_DISMISS$1, function (event) {
           if (_this9._ignoreBackdropClick) {
-            _this9._ignoreBackdropClick = false;
+            _this9._ignoreBackdropClick = true;
             return;
           }
 

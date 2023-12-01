@@ -15,13 +15,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', 'HomeController@index');
-
 Route::get('/users', 'UserController@index');
-
 Auth::routes(['verify' => true]);
-
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-
 Route::post('/users', 'UserController@store')->name('users.store');
-
 Route::delete('/users/delete/{id}', 'UserController@destroy')->name('users.destroy');
+Route::put('/users/edit/{id}', 'UserController@update')->name('users.update');
+Route::get('/users/edit/{id}', 'UserController@edit')->name('users.edit');

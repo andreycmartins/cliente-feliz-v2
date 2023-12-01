@@ -51,6 +51,41 @@
                         </div>
                     </div>
 
+                    <div class="modal fade" id="editarUsuarioModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="ModalLabel">Editar Usuário</h1>
+                                    <button type="" id="fecharIconeEditar" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar">X</button>
+                                </div>
+                                <form id="formEdit">
+                                    @csrf
+                                    <input type="hidden" id="id" name="id" />
+                                    <div class="modal-body">
+                                        <div>
+                                            <div class="form-group">
+                                                <label for="name">Id:</label>
+                                                <input type="text" class="form-control" id="idEdit" name="id" readonly>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Nome:</label>
+                                                <input type="text" class="form-control" id="nameEdit" name="name" placeholder="Digite seu nome">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email:</label>
+                                                <input type="email" class="form-control" id="emailEdit" name="email" placeholder="Digite seu email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="fecharEditar" class="btn btn-secondary" data-dismiss="modal" data-bs-dismiss="modal">Fechar</button>
+                                        <button id="save" type="submit" class="btn btn-primary">Salvar Usuario</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
                     <table id="list-users" class="display">
                         <thead>
                             <tr>
